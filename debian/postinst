@@ -1,0 +1,8 @@
+#!/bin/bash
+
+chmod +x /usr/local/bin/monitor-realtime.sh
+systemctl daemon-reload
+systemctl enable monitor.service
+systemctl start monitor.service
+
+echo "Realtime Monitor Agent Installed and Started"

@@ -1,0 +1,12 @@
+[Unit]
+Description=Real-Time Server Monitoring Agent
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/monitor-realtime.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,46 @@
+Resource Monitoring and File Download Management System
+Copyright (C) 2026 Nephilaw Web Technology Inc
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+
+## install required package
+sudo apt update
+sudo apt install git curl sysstat -y
+sudo systemctl enable sysstat
+sudo systemctl start sysstat
+
+##Clone Your GitHub Repository
+cd /opt
+sudo git clone https://github.com/rplomantes/realtime-monitor-agent.git
+cd realtime-monitor-agent
+
+
+##change permission on build.sh
+sudo chmod +x build.sh
+sudo ./build.sh
+## after build you should see
+#build/realtime-monitor.deb#
+
+## Install
+sudo dpkg -i realtime-monitor.deb
+
+## Configure
+sudo nano /etc/monitor.conf
+
+## Restart
+sudo systemctl restart monitor
+
+## Status
+sudo systemctl status monitor
+
+## Logs
+journalctl -u monitor

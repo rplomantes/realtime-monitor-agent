@@ -1,0 +1,9 @@
+Package: realtime-monitor
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Your Company <admin@yourdomain.com>
+Depends: curl, sysstat
+Description: Real-time CPU, Memory, Disk monitoring agent
+ Sends server metrics to monitoring server via API.
